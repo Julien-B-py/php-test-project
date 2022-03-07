@@ -1,10 +1,15 @@
 // Store <img> in a variable
 const img = document.querySelector("img");
 
+// Offline
+// const DOMAIN = "http://localhost:8000";
+// Online
+const DOMAIN = "https://sheltered-reef-81680.herokuapp.com";
+
 // Fetch random image then display it in the img element
 const getImg = async () => {
 
-    await fetch("http://localhost:8000/api/getRandomImg.php").then((res) => {
+    await fetch(`${DOMAIN}/api/getRandomImg.php`).then((res) => {
 
         // If response successful
         if (res.ok) {
